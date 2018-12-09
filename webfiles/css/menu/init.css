@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+body{
+    background-color: #D77D00;
+    font-family: "Montserrat";
+}
+.row.col.s12 .submenu{
+    margin-top: 3vw;
+    width: 100%;
+}
+.row.col.s12 .submenu .tabs .tab.col.s3 a{
+    color: #D77D00;
+    font-weight: bold;
+}
+
+.row.col.s12 .submenu .tabs .indicator{
+    background-color: #A40500;
+}
+
+.row.col.s12 #drinks .col.s12.card , .row.col.s12 #snacks .col.s12.card{
+    padding: 2vw;
+}

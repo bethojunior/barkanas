@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+*{
+    margin: 0;
+    padding: 0;
+    color: #49494B;
+}
+
+.geral404{
+    font-family: "Montserrat";
+    margin-top: 0vw;
+}
+.geral404 .navbar{
+    background-color: #FF9A00;
+    width: 100%;
+    height: 6vw;
+}
+.iconComeBack{
+    width: 5vw;
+    position: absolute;
+    top: 0;
+    margin-top: 0.5vw;
+    margin-left: 2vw;
+}
+.geral404 .alignCenter{
+    text-align: center;
+}
+.geral404 .giffCar{
+    margin-top: 6VW;
+    width: 25%;
+    margin-left: 37%;
+}
+
+@media (max-width:992px) {
+    .geral404  img.giffCar{
+        width: 50%;
+        margin-left: 25vw;
+    }
+}

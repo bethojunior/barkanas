@@ -1,0 +1,11 @@
+.navFirst{
+    color: #D77D00;
+    position: fixed;
+    top: 0;
+    background-color: white;
+    width: 104%;
+}
+.mediumIcon{
+    font-size: 10vw;
+    /*padding-right: 5vw;*/
+}

@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+body{
+    background-color: #D77D00;
+    font-family: "Montserrat";
+}
+.row.generalHome{
+    margin-top: 6vw;
+}
