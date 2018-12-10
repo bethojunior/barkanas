@@ -7,23 +7,24 @@ $(document).ready(function(){
 
 elementProperty.addEventInElement('#loadDrinks' , 'onclick' , data => {
     let mountList = '';
-    ProductsController.getDrinks().then(resolve => {
+    ProductsController.getProducts().then(resolve => {
         if(resolve.status){
             data = resolve.data;
-            console.log(data);
             data.map(res => {
-                mountList += `
-                    <div id="${res.id}" class="col s12 card cardDrinks">
-                        <div class="col s8">
-                            <span><b>${res.name}</b></span>
-                            <div class="divider"></div>
-                            <span>R$${FormatNumber.cash(res.this_value)}</span>
-                            <br>
-                            <span>${res.description}</span>
+                if(res.type === 'drinks'){
+                    mountList += `
+                        <div id="${res.id}" class="col s12 card cardDrinks">
+                            <div class="col s8">
+                                <span><b>${res.name}</b></span>
+                                <div class="divider"></div>
+                                <span>R$${FormatNumber.cash(res.this_value)}</span>
+                                <br>
+                                <span>${res.description}</span>
+                            </div>
+                            <div class="col s4"><img width="60vw" class="responsive-img" src="${PATH_IMAGE+res.photo}"></div>
                         </div>
-                        <div class="col s4"><img width="60vw" class="responsive-img" src="${PATH_IMAGE+res.photo}"></div>
-                    </div>
-                `;
+                    `;
+                }
             });
 
             elementProperty.getElement('#drinks' , element => {
@@ -44,28 +45,28 @@ elementProperty.addEventInElement('#loadDrinks' , 'onclick' , data => {
 
 elementProperty.addEventInElement('#loadSnacks' , 'onclick' , data => {
     let mountList = '';
-    ProductsController.getSnacks().then(resolve => {
+    ProductsController.getProducts().then(resolve => {
         if(resolve.status){
             data = resolve.data;
-            console.log(data);
             data.map(res => {
-                mountList += `
-                    <div class="col s12 card">
-                        <div class="col s8">
-                            <span><b>${res.name}</b></span>
-                            <div class="divider"></div>
-                            <span>R$${FormatNumber.cash(res.this_value)}</span>
-                            <br>
-                            <span>${res.description}</span>
+                if(res.type === 'snacks'){
+                    mountList += `
+                        <div id="${res.id}" class="col s12 card cardDrinks">
+                            <div class="col s8">
+                                <span><b>${res.name}</b></span>
+                                <div class="divider"></div>
+                                <span>R$${FormatNumber.cash(res.this_value)}</span>
+                                <br>
+                                <span>${res.description}</span>
+                            </div>
+                            <div class="col s4"><img width="60vw" class="responsive-img" src="${PATH_IMAGE+res.photo}"></div>
                         </div>
-                        <div class="col s4"><img width="60vw" class="responsive-img" src="${PATH_IMAGE+res.photo}"></div>
-                    </div>
-                `;
+                    `;
+                }
             });
-
-            elementProperty.getElement('#snacks' , element => {
-                element.innerHTML = mountList;
-            });
+        elementProperty.getElement('#snacks' , element => {
+            element.innerHTML = mountList;
+        });
         }
     },reject => {
         console.log(reject)

@@ -1,12 +1,8 @@
 class ProductsController {
-    static getDrinks(){
+    static getProducts(){
         return new Promise((resolve , reject) => {
-            ConnectionServer.sendRequest('Products/GetDrinks' , 'POST' , null , resolve , reject);
+            ConnectionServer.sendRequest('Products/GetAll' , 'POST' , null , resolve , reject);
         });
     }
-    static getSnacks(){
-        return new Promise((resolve , reject) => {
-            ConnectionServer.sendRequest('Products/GetSnacks' , 'POST' , null , resolve , reject);
-        });
-    }
+
 }
